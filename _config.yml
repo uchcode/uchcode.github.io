@@ -18,5 +18,5 @@ title: uchcode on github
 # Build settings
 markdown: kramdown
 theme: minima
-# plugins:
-#   - jekyll-feed
+plugins:
+  - jekyll-feed
