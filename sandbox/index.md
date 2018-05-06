@@ -1,5 +1,5 @@
-sandbox
-=======
+もしかしてタイトルはなしでいきなり始めていいんじゃね？
+
 
 ```js
 var Person = function (firstname, lastname, age) {
