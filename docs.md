@@ -1,10 +1,7 @@
 docs
 ====
 
-もしかしてタイトルはなしでいきなり始めていいんじゃね？
-
-嘘でした。タイトルは必要でした。
-
+これはmdファイルです。
 
 ```js
 var Person = function (firstname, lastname, age) {
