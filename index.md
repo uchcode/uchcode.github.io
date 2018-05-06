@@ -5,6 +5,4 @@
 layout: home
 ---
 
-<h1>ようこそ</h1>
-
-ウィキっぽい何か。技術メモ。
+![index-image](index.jpg)
