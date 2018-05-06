@@ -5,7 +5,6 @@
 layout: home
 ---
 
-top
-===
+<h1>top</h1>
 
 ![index-image](index.jpg)
