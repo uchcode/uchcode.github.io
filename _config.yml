@@ -32,4 +32,5 @@ codepenUsername:
 #highlighter: pygments
 markdown: kramdown
   input: GFM
+  syntax_highlighter: pygments
 #theme: minima
