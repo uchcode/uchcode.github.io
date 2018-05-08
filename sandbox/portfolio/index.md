@@ -2,7 +2,11 @@
 # portfolio
 ---
 
-![太郎のアイコン](taro.png =140x140)
+<!--
+![太郎のアイコン](taro.png)
+-->
+
+<img src="/sandbox/portfolio/taro.png" width="140" height="140" alt="太郎のアイコン">
 
 山田太郎
 =======
