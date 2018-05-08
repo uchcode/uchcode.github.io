@@ -44,12 +44,23 @@ UI/UXデザイナー見習いです。
 
 
 <!-- フッター -->
-
-<footer>
-  <ul>
-    <li><img src="mail.png" width="20" height="20" alt="メール"></li>
-    <li><img src="blog.png" width="20" height="20" alt="ブログサイトへ"></li>
-    <li><img src="photos.png" width="20" height="20" alt="写真サイトへ"></li>
-  </ul>
-  <p>(c) Taro Yamada</p>
-</footer>
+  <footer>
+    <ul>
+      <li>
+        <a href="mailto:taguchi@gmail.com" target="_blank">
+          <img src="mail.png" width="20" height="20" alt="メール送信">
+        </a>
+      </li>
+      <li>
+        <a href="https://dotinstall.com" target="_blank">
+          <img src="blog.png" width="20" height="20" alt="ブログサイトへ">
+        </a>
+      </li>
+      <li>
+        <a href="https://dotinstall.com" target="_blank">
+          <img src="photos.png" width="20" height="20" alt="写真サイトへ">
+        </a>
+      </li>
+    </ul>
+    <p>(c) Taro Yamada</p>
+  </footer>
