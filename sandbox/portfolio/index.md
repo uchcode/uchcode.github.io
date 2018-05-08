@@ -46,8 +46,10 @@ UI/UXデザイナー見習いです。
 <!-- フッター -->
 
 <footer>
-  <img src="mail.png" width="20" height="20" alt="メール">
-  <img src="blog.png" width="20" height="20" alt="ブログサイトへ">
-  <img src="photos.png" width="20" height="20" alt="写真サイトへ">
+  <ul>
+    <li><img src="mail.png" width="20" height="20" alt="メール"></li>
+    <li><img src="blog.png" width="20" height="20" alt="ブログサイトへ"></li>
+    <li><img src="photos.png" width="20" height="20" alt="写真サイトへ"></li>
+  </ul>
   <p>(c) Taro Yamada</p>
 </footer>
