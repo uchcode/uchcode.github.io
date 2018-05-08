@@ -29,8 +29,6 @@ description: > # this means to ignore newlines until "baseurl:"
 #codepenUsername:
 
 # Build settings
-#highlighter: pygments
 markdown: kramdown
-#  input: GFM
-#  syntax_highlighter: pygments #rouge
+highlighter: pygments
 #theme: minima
