@@ -31,3 +31,5 @@ const square = new Polygon(10, 10);
 
 console.log(square.area);
 ```
+
+think different.
