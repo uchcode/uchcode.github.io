@@ -31,6 +31,6 @@ description: > # this means to ignore newlines until "baseurl:"
 # Build settings
 #highlighter: pygments
 markdown: kramdown
-  input: GFM
-#  syntax_highlighter: pygments
+#  input: GFM
+#  syntax_highlighter: pygments #rouge
 #theme: minima
