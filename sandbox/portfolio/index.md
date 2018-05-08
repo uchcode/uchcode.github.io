@@ -13,3 +13,5 @@ layout: portfolio
 =======
 
 UI/UXデザイナー見習いです。
+
+portfolioを適応させました。
