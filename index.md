@@ -11,7 +11,7 @@ go to [sandbox](docs/sandbox).
 
 [docs/gh-pages/settings](docs/gh-pages/settings)
 
-```
+```js
 class Polygon {
   constructor(height, width) {
     this.height = height;
