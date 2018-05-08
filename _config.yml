@@ -29,7 +29,7 @@ dribbbleUsername:
 codepenUsername:
 
 # Build settings
-highlighter: pygments
+#highlighter: pygments
 markdown: kramdown
   input: GFM
 #theme: minima
