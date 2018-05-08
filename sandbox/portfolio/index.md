@@ -1,5 +1,6 @@
 ---
 # portfolio
+layout: portfolio
 ---
 
 <!--
