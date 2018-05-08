@@ -29,5 +29,5 @@ dribbbleUsername:
 codepenUsername:
 
 # Build settings
-#markdown: kramdown
+markdown: kramdown
 #theme: minima
