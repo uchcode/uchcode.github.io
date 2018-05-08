@@ -30,4 +30,5 @@ codepenUsername:
 
 # Build settings
 markdown: kramdown
+  input: GFM
 #theme: minima
