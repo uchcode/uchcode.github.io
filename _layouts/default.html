@@ -14,11 +14,11 @@
       <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
       {% endif %}
 
-      {%- include head.html -%}
+      {% include head.html %}
 
       {{ content }}
 
-      {%- include footer.html -%}
+      {% include footer.html %}
 
       {% if site.github.private != true and site.github.license %}
       <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
