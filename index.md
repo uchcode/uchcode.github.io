@@ -6,3 +6,5 @@ layout: default
 ---
 
 hello again.
+
+go to [sandbox](docs/sandbox).
