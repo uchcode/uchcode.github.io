@@ -7,8 +7,10 @@ layout: portfolio
 
 <header>
   <nav>
-    HOME
-    ABOUT
+    <ul>
+      <li>HOME</li>
+      <li>ABOUT</li>
+    </ul>
   </nav>
   <img src="header.png" width="400" height="130" alt="ヘッダー画像">
 </header>
@@ -23,25 +25,21 @@ layout: portfolio
 UI/UXデザイナー見習いです。
 
 <section>
-  
   <section>
     <img src="work1.png" width="400" height="260" alt="勇者ゲーム">
     <h2>勇者ゲーム</h2>
     <p>楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。</p>
   </section>
-
   <section>
     <img src="work2.png" width="400" height="260" alt="宝探しゲーム">
     <h2>宝探しゲーム</h2>
     <p>楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。</p>
   </section>
-
   <section>
     <img src="work3.png" width="400" height="260" alt="神経衰弱">
     <h2>神経衰弱</h2>
     <p>楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。</p>
   </section>
-
 </section>
 
 
