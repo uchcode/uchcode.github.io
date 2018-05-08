@@ -23,16 +23,19 @@ UI/UXデザイナー見習いです。
 
 楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。
 
-<img src="work2.png" width="400" height="260" alt="勇者ゲーム">
+<img src="work2.png" width="400" height="260" alt="宝探しゲーム">
 
 ## 宝探しゲーム
 
 楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。
 
-<img src="work3.png" width="400" height="260" alt="勇者ゲーム">
+<img src="work3.png" width="400" height="260" alt="神経衰弱">
 
 ## 神経衰弱
 
 楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。楽しいアプリです。
 
-
+<img src="mail.png" width="20" height="20" alt="メール">
+<img src="blog.png" width="20" height="20" alt="ブログサイトへ">
+<img src="photos.png" width="20" height="20" alt="写真サイトへ">
+<p>(c) Taro Yamada</p>
