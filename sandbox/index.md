@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<div style="border: 1px solid silver;
+<textarea style="border: 1px solid silver;
             padding: 0.5em;
             font-family: monospace;
             position: fixed;
@@ -11,7 +11,7 @@ layout: home
             left  : 1em;
             right : 1em;"
             contenteditable="true"
-            id="editor"><div>
+            id="editor"><textarea>
 
 <script type="text/javascript">
 function enableIndentHandler(event) {
