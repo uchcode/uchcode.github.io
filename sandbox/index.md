@@ -2,7 +2,9 @@
 layout: home
 ---
 
-<textarea style="font-family:monospace;width:100%;height:100%;"></textarea>
+<div style="position:fixed; top:4em; bottom:4em; left:4em; right:4em;">
+    <textarea style="font-family:monospace; width:100%; height:100%;"></textarea>
+</div>
 
 <script>
 function enableIndentHandler(event) {
