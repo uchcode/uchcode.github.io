@@ -2,25 +2,16 @@
 layout: home
 ---
 
-<textarea style="border: 1px solid silver;
-            padding: 0.5em;
-            font-family: monospace;
-            position: fixed;
-            top   : 1em;
-            bottom: 1em;
-            left  : 1em;
-            right : 1em;"
-            contenteditable="true"
-            id="editor"></textarea>
+<textarea style="font-family:monospace;width:100%;height:100%;"></textarea>
 
-<script type="text/javascript">
+<script>
 function enableIndentHandler(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         var elementValue = this.value;
         var selectionEnd = this.selectionEnd;
         var lastIndexOfLineFeed = elementValue.lastIndexOf('\n', selectionEnd-1);
-        var isNoneLineFeed = lastIndexOfLineFeed === -1 ? true:false;
+        var isNoneLineFeed = lastIndexOfLineFeed === -1 ? true : false;
         var currentLine = elementValue.substring(lastIndexOfLineFeed, elementValue.length);
         var indentSpace = currentLine.match(/^\s*/gi)[0];
         var contentsBefore = elementValue.substring(0, selectionEnd);
@@ -32,14 +23,17 @@ function enableIndentHandler(event) {
         }
         this.value = elementValue;
         if (isNoneLineFeed) {
-            this.setSelectionRange(selectionEnd+indentSpace.length+1, selectionEnd+indentSpace.length+1);
+            var selectionStart = selectionEnd + indentSpace.length + 1;
+            var selectionEnd = selectionEnd + indentSpace.length + 1;
         } else {
-            this.setSelectionRange(selectionEnd+indentSpace.length, selectionEnd+indentSpace.length);
+            var selectionStart = selectionEnd + indentSpace.length;
+            var selectionEnd = selectionEnd + indentSpace.length;
         }
+        this.setSelectionRange(selectionStart, selectionEnd);
     }
 }
 try {
-    Object.defineProperty(Element.prototype, 'enableIndent', {
+    Object.defineProperty(HTMLTextAreaElement.prototype, 'enableIndent', {
         get: function() {
             return this._enableIndentValue || false;
         },
@@ -53,10 +47,13 @@ try {
         }
     });
 } catch(e) {
-    console.log(e);
+    console.error(e);
 }
 </script>
 
-<script type="text/javascript">
-document.querySelector('#editor').enableIndent = true;
+<script>
+document.querySelector('textarea').enableIndent = true;
+/* or
+document.querySelector('textarea').addEventListener('keydown', enableIndentHandler, false);
+*/
 </script>
