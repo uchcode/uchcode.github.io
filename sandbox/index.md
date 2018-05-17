@@ -10,5 +10,5 @@ layout: home
              left: 1em;
              right: 1em;"><div>
 <script type="text/javascript">
-  window.alert('hey');
+  console.log('hey');
 </script>
