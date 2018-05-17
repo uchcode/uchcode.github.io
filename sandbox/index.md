@@ -11,7 +11,7 @@ layout: home
             left  : 1em;
             right : 1em;"
             contenteditable="true"
-            id="editor"><textarea>
+            id="editor"></textarea>
 
 <script type="text/javascript">
 function enableIndentHandler(event) {
