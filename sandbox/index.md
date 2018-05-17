@@ -1,3 +1,7 @@
+------------
+layout: home
+------------
+
 <div  style="border: 1px solid silver;
              font-family: monospace;
              position: fixed;
