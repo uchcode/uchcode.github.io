@@ -30,6 +30,4 @@ twitterUsername: c9mii
 #codepenUsername:
 
 # Build settings
-#theme: minima
-
-theme: jekyll-theme-slate
+theme: minima
