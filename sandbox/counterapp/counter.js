@@ -35,7 +35,7 @@ const CounterProxy = element => new Proxy(element.model, {
 class MyCounter extends HTMLElement {
   constructor(counter) {
     super()
-    this.model = counter || new Counter(Number(this.textContent))
+    this.model = counter || new Counter(Number(this.textContent.trim()))
     this.textContent = this.model.count
     this.proxy = CounterProxy(this)
     this.attachShadow({mode:'open'})
