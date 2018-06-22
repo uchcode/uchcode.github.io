@@ -14,7 +14,7 @@ class Counter {
     return this._defaultCount
   }
   reset() {
-    this.count = this._defaultCount
+    this.count = this.defaultCount
   }
   up(by=1) {
     this.count += by
