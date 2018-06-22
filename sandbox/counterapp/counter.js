@@ -24,7 +24,7 @@ const template = `
   </div>
 `
 
-const makeProxy = element => new Proxy(element.model, {
+const CounterProxy = element => new Proxy(element.model, {
   set(target, property, value, receiver) {
     target[property] = value
     element.textContent = value
@@ -37,7 +37,7 @@ class MyCounter extends HTMLElement {
     super()
     this.model = counter || new Counter(Number(this.textContent))
     this.textContent = this.model.count
-    this.proxy = makeProxy(this)
+    this.proxy = CounterProxy(this)
     this.attachShadow({mode:'open'})
     this.shadowRoot.innerHTML = template
     const buttons = this.shadowRoot.querySelectorAll('button')
