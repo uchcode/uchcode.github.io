@@ -1,3 +1,10 @@
+const template = `
+  <div class="counter">
+    <div><slot></slot></div>
+    <button>+</button><button>-</button>
+  </div>
+`
+
 class Counter {
   constructor(defaultCount=0) {
     this._defaultCount = defaultCount
@@ -16,13 +23,6 @@ class Counter {
     this.count -= by
   }
 }
-
-const template = `
-  <div class="counter">
-    <div><slot></slot></div>
-    <button>+</button><button>-</button>
-  </div>
-`
 
 const makeProxy = element => new Proxy(element.model, {
   set(target, property, value, receiver) {
