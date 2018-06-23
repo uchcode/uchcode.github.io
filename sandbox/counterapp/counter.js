@@ -36,19 +36,13 @@ class MyCounter extends HTMLElement {
   constructor(counter) {
     super()
     this.model = counter || new Counter(Number(this.textContent.trim()))
-    this.textContent = this.model.count
     this.proxy = CounterProxy(this)
+    this.textContent = this.proxy.count
     this.attachShadow({mode:'open'})
     this.shadowRoot.innerHTML = template
     const buttons = this.shadowRoot.querySelectorAll('button')
-    buttons[0].addEventListener('click', () => this.up(1))
-    buttons[1].addEventListener('click', () => this.down(1))
-  }
-  up(by) {
-    this.proxy.up(by)
-  }
-  down(by) {
-    this.proxy.down(by)
+    buttons[0].addEventListener('click', () => this.proxy.up(1))
+    buttons[1].addEventListener('click', () => this.proxy.down(1))
   }
 }
 
