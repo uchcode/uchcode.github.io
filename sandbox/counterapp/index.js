@@ -1,6 +1,6 @@
-import './multiple-counter.js'
+import { MyMultipleCounter } from './multiple-counter.js'
 
-const app = document.createElement('my-multiple-counter')
+const app = new MyMultipleCounter()
 // app.proxy.push({defaultCount:10})
 
 document.body.appendChild(app)
