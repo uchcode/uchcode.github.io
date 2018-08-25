@@ -14,3 +14,5 @@ go to [sandbox](docs/sandbox).
 github-pagesのデフォルトテーマは[primer](https://github.com/pages-themes/primer)
 
 [site:uchcode.github.io](https://www.google.co.jp/search?q=site%3Auchcode.github.io)
+
+[uchcode.github.ioのソース](https://github.com/uchcode/uchcode.github.io)
