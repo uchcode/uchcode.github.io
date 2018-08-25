@@ -31,3 +31,6 @@ twitterUsername: c9mii
 
 # Build settings
 #theme: minima
+
+plugins:
+ - jekyll-sitemap
