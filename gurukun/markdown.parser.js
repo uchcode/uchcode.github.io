@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     d.open();
     d.write(t.replace('${content}', c));
     d.close();
-    document.title = document.title || d.title || d.body.firstElementChild.innerText.trim();
+    document.title = document.title || d.title || d.body.firstElementChild.firstElementChild.innerText.trim();
   };
   document.body.appendChild(style);
   document.body.appendChild(script);
