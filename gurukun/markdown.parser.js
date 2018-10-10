@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const templateUrl = 'markdown.template.html';
+  const templateUrl = 'https://uchcode.github.io/gurukun/markdown.template.html';
   const style = document.createElement('style');
   style.textContent = 'body{margin:0;padding:0;}iframe{border:0;width:100%;height:100%;}';
   const script = document.createElement('script');
