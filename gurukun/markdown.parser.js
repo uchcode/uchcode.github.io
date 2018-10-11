@@ -8,60 +8,69 @@ document.addEventListener("DOMContentLoaded", async () => {
     var styles = 'body{margin:0;padding:0;}'
     styles += 'iframe{width:100%;height:100%;border:0;}'
     sheet.innerHTML = styles
-    document.head.appendChild(sheet);
 
 
-    var markdown = document.querySelector('noscript').innerText
+    var script = document.createElement('script')
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js'
+    script.onload = () => {
 
-    var converter = new showdown.Converter({
-        emoji: true,
-        underline: true,
-    })
-    converter.setFlavor('github')
+        var markdown = document.querySelector('noscript').innerText
 
-    converter.addExtension(function () {
-        return [{
-            type: 'output',
-            regex: /<a\shref.+">/g,
-            replace : function (text) {
-                var url = text.match(/"(.*?)"/)[1]
-                if(url.includes(window.location.hostname) || url[0] == '/' || url[0] == '.' || url[0] == '#'){
+        var converter = new showdown.Converter({
+            emoji: true,
+            underline: true,
+        })
+        converter.setFlavor('github')
+
+        converter.addExtension(function () {
+            return [{
+                type: 'output',
+                regex: /<a\shref.+">/g,
+                replace : function (text) {
+                    var url = text.match(/"(.*?)"/)[1]
+                    if(url.includes(window.location.hostname) || url[0] == '/' || url[0] == '.' || url[0] == '#'){
+                        return text
+                    }
+                    return '<a href="' + url + '" target="_blank">'
+                }
+            }]
+        }, 'externalLink')
+
+        converter.addExtension(function () {
+            return [{
+                type: 'output',
+                regex: /<a\shref.+">/g,
+                replace : function (text) {
+                    var url = text.match(/"(.*?)"/)[1]
+                    if(url.includes(window.location.hostname) || url[0] == '/' || url[0] == '.' || url[0] == '#'){
+                        return '<a href="' + url + '" target="_top">'
+                    }
                     return text
                 }
-                return '<a href="' + url + '" target="_blank">'
-            }
-        }]
-    }, 'externalLink')
-
-    converter.addExtension(function () {
-        return [{
-            type: 'output',
-            regex: /<a\shref.+">/g,
-            replace : function (text) {
-                var url = text.match(/"(.*?)"/)[1]
-                if(url.includes(window.location.hostname) || url[0] == '/' || url[0] == '.' || url[0] == '#'){
-                    return '<a href="' + url + '" target="_top">'
-                }
-                return text
-            }
-        }]
-    }, 'internalLink')
+            }]
+        }, 'internalLink')
 
 
-    var html = converter.makeHtml(markdown)
-    var i = document.createElement('iframe')
-    document.body.appendChild(i)
-    var d = i.contentWindow.document
-    d.open()
-    d.write(template.replace('${html}', html))
-    d.close()
-    document.title = document.title || d.title || d.body.firstElementChild.firstElementChild.innerText.trim()
+        var html = converter.makeHtml(markdown)
+        var iframe = document.createElement('iframe')
+        document.body.appendChild(iframe)
+        var doc = iframe.contentWindow.document
+        doc.open()
+        doc.write(template.replace('${html}', html))
+        doc.close()
+        document.title = document.title || doc.title || doc.body.firstElementChild.firstElementChild.innerText.trim()
 
 
-    //handle hash linking
-    setTimeout(function() {
-        var hash = window.location.hash
-        window.location.hash = ''
-        window.location.hash = hash
-    }, 100)
+        //handle hash linking
+        setTimeout(function() {
+            var hash = window.location.hash
+            window.location.hash = ''
+            window.location.hash = hash
+        }, 100)
+
+    }
+
+
+    document.head.appendChild(sheet)
+    document.body.appendChild(script)
 })
