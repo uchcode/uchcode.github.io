@@ -1,21 +1,67 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const templateUrl = 'https://uchcode.github.io/gurukun/markdown.template.html';
-  const style = document.createElement('style');
-  style.textContent = 'body{margin:0;padding:0;}iframe{border:0;width:100%;height:100%;}';
-  const script = document.createElement('script');
-  script.src = 'https://cdn.rawgit.com/chjj/marked/master/marked.min.js';
-  script.onload = async () => {
-    const i = document.createElement('iframe');
-    document.body.appendChild(i);
-    const t = await (await fetch(templateUrl)).text();
-    const n = document.querySelector('noscript');
-    const c = window.marked(n.textContent);
-    const d = i.contentWindow.document;
-    d.open();
-    d.write(t.replace('${content}', c));
-    d.close();
-    document.title = document.title || d.title || d.body.firstElementChild.firstElementChild.innerText.trim();
-  };
-  document.body.appendChild(style);
-  document.body.appendChild(script);
-});
+document.addEventListener("DOMContentLoaded", async () => {
+
+    var templateUrl = 'https://uchcode.github.io/gurukun/markdown.template.html'
+    var template = await (await fetch(templateUrl)).text()
+
+
+    //styles
+    var sheet = document.createElement('style')
+    var styles = 'body{margin:0;padding:0;}'
+    styles += 'iframe{width:100%;height:100%;border:0;}'
+    sheet.innerHTML = styles
+    document.head.appendChild(sheet);
+
+
+    var markdown = document.querySelector('noscript').innerText
+
+    var converter = new showdown.Converter({
+        emoji: true,
+        underline: true,
+    })
+
+    converter.addExtension(function () {
+        return [{
+            type: 'output',
+            regex: /<a\shref.+">/g,
+            replace : function (text) {
+                var url = text.match(/"(.*?)"/)[1]
+                if(url.includes(window.location.hostname) || url[0] == '/' || url[0] == '.' || url[0] == '#'){
+                    return text
+                }
+                return '<a href="' + url + '" target="_blank">'
+            }
+        }]
+    }, 'externalLink')
+
+    converter.addExtension(function () {
+        return [{
+            type: 'output',
+            regex: /<a\shref.+">/g,
+            replace : function (text) {
+                var url = text.match(/"(.*?)"/)[1]
+                if(url.includes(window.location.hostname) || url[0] == '/' || url[0] == '.' || url[0] == '#'){
+                    return '<a href="' + url + '" target="_top">'
+                }
+                return text
+            }
+        }]
+    }, 'internalLink')
+
+
+    var html = converter.makeHtml(markdown)
+    var i = document.createElement('iframe')
+    document.body.appendChild(i)
+    var d = i.contentWindow.document
+    d.open()
+    d.write(template.replace('${html}', html))
+    d.close()
+    document.title = document.title || d.title || d.body.firstElementChild.firstElementChild.innerText.trim()
+
+
+    //handle hash linking
+    setTimeout(function() {
+        var hash = window.location.hash
+        window.location.hash = ''
+        window.location.hash = hash
+    }, 100)
+})
