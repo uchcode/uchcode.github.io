@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     var template = await (await fetch(templateUrl)).text()
 
 
-    //styles
     var sheet = document.createElement('style')
     var styles = 'body{margin:0;padding:0;}'
     styles += 'iframe{width:100%;height:100%;border:0;}'
@@ -18,6 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         emoji: true,
         underline: true,
     })
+    converter.setFlavor('github')
 
     converter.addExtension(function () {
         return [{
