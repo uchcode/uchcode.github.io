@@ -1,0 +1,86 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<style>body{margin:0;padding:0;} *{touch-action:manipulation;}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+<script type="module">
+
+document.addEventListener('touchmove', e=>e.preventDefault(), {passive:false})
+
+import * as object from '../lib/util.object.js'
+import * as element from '../lib/util.element.js'
+
+document.title = 'Greeting'
+
+const message = element.create('h2', {
+  position: {x:'0', top:'2rem'},
+  textContent: 'What is your name?',
+})
+
+const input = element.create('input', {
+  style: {
+    fontSize: '1rem',
+    textAlign: 'center',
+  },
+  position: {x:'0', top:'6rem'},
+  placeholder: 'your name here',
+})
+
+const button = element.create('button', {
+  style: {
+    fontSize: '2rem',
+    border: '0',
+    color: 'blue',
+  },
+  position: {x:'0', top:'9rem'},
+  textContent: 'submit',
+})
+
+const scene = {
+  bgcolor: null,
+  logos: null,
+}
+
+const createLogo = (name) => ({
+  name    : name,
+  size    : random(10,200),
+  color   : [random(255), random(255), random(255)],
+  position: width > height ? [random(width), random(width)] : [random(height), random(height)],
+  angle   : random(2 * PI)
+})
+
+const makeScene = (event) => {
+  scene.bgcolor = [random(255), random(255), random(255), random(255)]
+  scene.logos = []
+  for (let i = 0; i < 30; i++) {
+    scene.logos.push(createLogo(input.value))
+  }
+}
+
+window.setup = () => {
+  createCanvas(document.body.clientWidth, document.body.clientHeight)
+}
+
+window.windowResized = () => {
+  resizeCanvas(document.body.clientWidth, document.body.clientHeight)
+}
+
+window.draw = () => {
+  if(!scene.bgcolor) return
+  
+  background(...scene.bgcolor)
+  for(const b of scene.logos) {
+    push()
+    textAlign(CENTER)
+    textSize(b.size)
+    fill(...b.color)
+    translate(...b.position)
+    rotate(b.angle)
+    text(b.name, 0, 0)
+    pop()
+  }
+}
+
+button.addEventListener('click', makeScene)
+
+</script>
