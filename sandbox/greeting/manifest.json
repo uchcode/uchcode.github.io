@@ -5,7 +5,7 @@
   "background_color": "#2196f3",
   "display": "standalone",
   "Scope": "/sandbox/greeting/",
-  "start_url": "https://uchcode.github.io/sandbox/greeting/",
+  "start_url": "/sandbox/greeting/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
