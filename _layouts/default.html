@@ -13,6 +13,11 @@
       {{ content }}
       {% include footer.html %}
     </div>
+    <div>
+  {% for post in site.posts %}
+    <li>&raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+    </div>
     {% include script.html %}
   </body>
 </html>
