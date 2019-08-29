@@ -34,3 +34,4 @@ twitterUsername: c9mii
 
 plugins:
  - jekyll-sitemap
+ - jekyll-remote-theme
