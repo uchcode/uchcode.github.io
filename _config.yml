@@ -37,4 +37,4 @@ remote_theme: mmistakes/minimal-mistakes
 
 plugins:
  - jekyll-sitemap
-# - jekyll-remote-theme
+ - jekyll-remote-theme
