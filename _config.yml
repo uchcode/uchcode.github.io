@@ -31,6 +31,7 @@ twitterUsername: c9mii
 
 # Build settings
 #theme: minima
+remote_theme: daattali/beautiful-jekyll
 
 plugins:
  - jekyll-sitemap
