@@ -31,8 +31,8 @@ twitterUsername: c9mii
 
 # Build settings
 #theme: minima
-remote_theme: TaylanTatli/Moon
+#remote_theme: TaylanTatli/Moon
 
 plugins:
  - jekyll-sitemap
- - jekyll-remote-theme
+# - jekyll-remote-theme
