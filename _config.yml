@@ -30,10 +30,10 @@ twitterUsername: c9mii
 #codepenUsername:
 
 # Build settings
-#theme: minima
+theme: minima
 #remote_theme: TaylanTatli/Moon
 #remote_theme: matthiaslischka/jekyll-uno-remote-theme-demo
-remote_theme: mmistakes/minimal-mistakes
+#remote_theme: mmistakes/minimal-mistakes
 
 plugins:
  - jekyll-sitemap
