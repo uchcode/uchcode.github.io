@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Apple WebApp</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="canonical" href="https://uch-apple-webapp.glitch.me/">
+<link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+<style>body{margin:0;padding:0;touch-action:manipulation;}</style>
+</head>
+<body ontouchmove="event.preventDefault()">
+<script>
+
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  rectMode(CENTER);
+}
+
+function draw() {
+  background(200);
+  rotateY(frameCount * 0.01);
+  for (var j = 0; j < 5; j++) {
+    push();
+    for (var i = 0; i < 80; i++) {
+      translate(
+        sin(frameCount * 0.001 + j) * 100,
+        sin(frameCount * 0.001 + j) * 100,
+        i * 0.1
+      );
+      rotateZ(frameCount * 0.002);
+      push();
+      sphere(18, 6, 4);
+      pop();
+    }
+    pop();
+  }
+}
+
+function windowResized() {
+  if (window.navigator.standalone) {
+    resizeCanvas(window.outerWidth, window.outerHeight);
+  } else {
+    resizeCanvas(window.innerWidth, window.innerHeight);
+  }
+}
+
+</script>
+</body></html>
